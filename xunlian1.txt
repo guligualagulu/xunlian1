@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>静态登录训练</title>
+</head>
+
+<body>
+	<fieldset style=width:280px;margin:auto>
+<td ></td>        
+<td style="text-align:center"><table>
+<form method ="POST" action="URL" name="frmLogin"  >
+ <tr>
+ <td>你的名字：</td>
+ <td><input type="text" name="username" value="Your name" size="20" maxlength="20" onfocus="if (this.value=='Your name')  this.value='';" /></td>
+ </tr>
+ <tr>
+ <td>密  码：</td>
+ <td><input type="password" name="password" value="Your password" size="20" maxlength="20" onfocus="if (this.value=='Your password')  this.value='';" /></td>
+ </tr>
+ <tr>
+ <td>验证码:</td>
+ <td><input type="text" size="" name="inputcode" value="Your code" onfocus="if (this.value=='Your code')  this.value='';" /></td>
+ <td><img src="D:\1.jpg"
+		  height="20px" width="20px" alt="请刷新"> </td>
+ <td><a href="#" onclick="shuaxin();">看不清，换一张</a></td>
+ </tr>
+ <tr>
+ <td><input type="checkbox" name="zlogin" value="1">记住密码</td>
+ </tr>
+ </table>
+ </td>
+  <tr>
+  <td> </td>   
+  <td><table>
+   <tr>
+  <td width="90px"><input type="submit" name="login" value="登录" onClick="return validateLogin()"/></td>
+  <td width="90px"><input type="reset" name="rs" value="重置"></td>
+  <td><input type="button" name="button" value="注册" onclick="location.href='注册的URL'"></td>
+  </tr>
+ </tr>
+ </table>
+ </td>
+ </table>
+</fieldset>
+</form>
+<script language="javascript">
+  function validateLogin(){
+    var sUserName = document.frmLogin.username.value ;
+    var sPassword = document.frmLogin.password.value ;
+    var sinputCode =document.frmLogin.inputcode.value ;  
+    if ((sUserName =="") || (sUserName=="Your name")){
+     alert("请输入用户名!");
+     return false ;
+    }
+     
+    if ((sPassword =="") || (sPassword=="Your password")){
+     alert("请输入密码!");
+     return false ;
+    }
+    if ((sinputCode =="") || (sinputCode=="Your code")){
+        alert("请输入验证码!");
+        return false ;
+       }
+   } 
+  </script>
+</body>
+</html>
